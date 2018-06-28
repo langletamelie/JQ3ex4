@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Exercice4</title>
+  <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+  <div id="rectangle"></div>
+  <button type="button" name="button" id="size">1</button>
+  <button type="button" name="button" id="changeColor">2</button>
+  <button type="button" name="button" id="changeColorAgain">3</button>
+  <button type="button" name="button" id="disappear">4</button>
+  <button type="button" name="button" id="reappear">5</button>
+  <script>
+  var addPx = 10;
+  $('#size').click(function(){
+    addPx +=10;
+    if (addPx == 100){
+      addPx =10;
+    }else{
+      $('#rectangle').css('height', addPx);
+    }
+  });
+  $('#changeColor').click(function(){
+    $('#rectangle').css('background','green');
+  });
+  $('#changeColorAgain').click(function(){
+    $('#rectangle').css('background','red');
+  });
+  $('#disappear').click(function(){
+    $('#rectangle').hide();
+  });
+  $('#reappear').click(function(){
+    $('#rectangle').show();
+  });
+  </script>
+</body>
+</html>
