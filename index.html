@@ -13,25 +13,35 @@
   <button type="button" name="button" id="changeColorAgain">3</button>
   <button type="button" name="button" id="disappear">4</button>
   <button type="button" name="button" id="reappear">5</button>
+  <!-- <input type="button" name="size" value="1"/>
+  -->
   <script>
+  // variable pour récupérer la couleur intiale du rectangle
+  var startColor = $('#rectangle').css('background-color');
   var addPx = 10;
   $('#size').click(function(){
     addPx +=10;
+    //retour à 10px si le rectangle dépasse 100px
     if (addPx == 100){
       addPx =10;
+      //ajout de 10px tant que le rectangle est < à 100px
     }else{
       $('#rectangle').css('height', addPx);
     }
   });
+  //changement de la couleur 1er bouton
   $('#changeColor').click(function(){
     $('#rectangle').css('background','green');
   });
+    //changement de la couleur 2eme bouton
   $('#changeColorAgain').click(function(){
-    $('#rectangle').css('background','red');
+    $('#rectangle').css('background', startColor);
   });
+  //faire disparaitre le rectangle 3eme bouton
   $('#disappear').click(function(){
     $('#rectangle').hide();
   });
+  //faire réapparaitre le rectangle 4eme bouton
   $('#reappear').click(function(){
     $('#rectangle').show();
   });
